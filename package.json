@@ -1,0 +1,19 @@
+{
+  "name": "@scaleandfit/engines",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Pure zero-dependency TypeScript calculation engines and verified biometric/sizing datasets for ScaleAndFit.",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit",
+    "build": "tsc -p tsconfig.json"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.2",
+    "typescript": "^5.7.2",
+    "vitest": "^2.1.8"
+  }
+}
