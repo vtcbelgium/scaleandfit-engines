@@ -29,7 +29,19 @@ export const SHOE_BRANDS: ShoeBrandProfile[] = [
   { slug: "salomon", name: "Salomon", offsetMm: -2, fitNote: "Precision athletic trail wrap; snug heel lock" },
   { slug: "on-running", name: "On Running", offsetMm: -1, fitNote: "Swiss CloudTec last runs slightly compact" },
   { slug: "dr-martens", name: "Dr. Martens", offsetMm: 3, fitNote: "Structured leather boot last with generous toe room" },
-  { slug: "crocs", name: "Crocs", offsetMm: 4, fitNote: "Relaxed roomy resin fit; whole sizes only" }
+  { slug: "crocs", name: "Crocs", offsetMm: 4, fitNote: "Relaxed roomy resin fit; whole sizes only" },
+  { slug: "brooks", name: "Brooks", offsetMm: 0, fitNote: "Standard fit" },
+  { slug: "saucony", name: "Saucony", offsetMm: 0, fitNote: "Standard fit" },
+  { slug: "puma", name: "Puma", offsetMm: 0, fitNote: "Standard fit" },
+  { slug: "reebok", name: "Reebok", offsetMm: 0, fitNote: "Standard fit" },
+  { slug: "mizuno", name: "Mizuno", offsetMm: -1, fitNote: "Slightly narrower" },
+  { slug: "merrell", name: "Merrell", offsetMm: 0, fitNote: "Standard fit" },
+  { slug: "timberland", name: "Timberland", offsetMm: 3, fitNote: "Slightly longer" },
+  { slug: "clarks", name: "Clarks", offsetMm: 0, fitNote: "Standard fit" },
+  { slug: "allbirds", name: "Allbirds", offsetMm: 0, fitNote: "Standard fit" },
+  { slug: "veja", name: "Veja", offsetMm: 0, fitNote: "Standard fit" },
+  { slug: "keen", name: "Keen", offsetMm: 0, fitNote: "Standard fit" },
+  { slug: "under-armour", name: "Under Armour", offsetMm: 0, fitNote: "Standard fit" }
 ];
 
 export function roundHalf(val: number): number {

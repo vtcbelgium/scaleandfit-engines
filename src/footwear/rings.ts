@@ -25,7 +25,8 @@ export function convertRingFromDiameterMm(diameterMm: number): RingConversion {
   const us = Math.round(((diameterMm - 11.63) / 0.8128) * 2) / 2;
   const eu = Math.round(Math.PI * diameterMm);
   const jp = Math.max(1, Math.round((diameterMm - 12.67) / 0.333 + 1));
-  const uk = ["S", "M", "L", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"][Math.floor(us) - 6] || "";
+  const ukIdx = Math.max(0, Math.min(25, Math.round(us * 2) - 1));
+  const uk = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"[ukIdx];
   return { diameterMm, circumferenceMm, us, uk, eu, jp };
 }
 

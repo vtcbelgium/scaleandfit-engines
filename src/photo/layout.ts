@@ -56,17 +56,20 @@ export function computePrintSheetLayout(spec: BiometricPhotoSpec, sheetWidthMm =
   const colsRotated = Math.floor((availW + gapMm) / (tileWRotated + gapMm));
   const rowsRotated = Math.floor((availH + gapMm) / (tileHRotated + gapMm));
   const countRotated = colsRotated * rowsRotated;
-  const cols = countRotated >= countUpright ? colsRotated : colsUpright;
-  const rows = countRotated >= countUpright ? rowsRotated : rowsUpright;
+  const useRotated = countRotated > countUpright;
+  const cols = useRotated ? colsRotated : colsUpright;
+  const rows = useRotated ? rowsRotated : rowsUpright;
+  const finalTileW = useRotated ? tileWRotated : tileW;
+  const finalTileH = useRotated ? tileHRotated : tileH;
   const count = cols * rows;
-  const startX = (sheetWidthMm - (cols * tileW + (cols - 1) * gapMm)) / 2;
-  const startY = (sheetHeightMm - (rows * tileH + (rows - 1) * gapMm)) / 2;
+  const startX = (sheetWidthMm - (cols * finalTileW + (cols - 1) * gapMm)) / 2;
+  const startY = (sheetHeightMm - (rows * finalTileH + (rows - 1) * gapMm)) / 2;
   const placements: TilePlacement[] = [];
   for (let row = 0; row < rows; row++) {
     for (let col = 0; col < cols; col++) {
-      const xMm = startX + col * (tileW + gapMm);
-      const yMm = startY + row * (tileH + gapMm);
-      placements.push({ xMm, yMm, widthMm: tileW, heightMm: tileH, rotated: countRotated >= countUpright });
+      const xMm = startX + col * (finalTileW + gapMm);
+      const yMm = startY + row * (finalTileH + gapMm);
+      placements.push({ xMm, yMm, widthMm: finalTileW, heightMm: finalTileH, rotated: useRotated });
     }
   }
   return {
