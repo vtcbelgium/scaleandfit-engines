@@ -14,9 +14,9 @@ describe("scaleandfit-engines full 4-suite barrel exports", () => {
   it("exports version, 4 suite identifiers, and merged datasets", () => {
     expect(ENGINES_VERSION).toBe("1.0.0");
     expect(SCALEANDFIT_SUITES).toHaveLength(4);
-    expect(AIRLINE_FLEET.length).toBeGreaterThanOrEqual(34);
-    expect(SHOE_BRANDS).toHaveLength(24);
-    expect(BIOMETRIC_PHOTO_SPECS).toHaveLength(36);
+    expect(AIRLINE_FLEET.length).toBeGreaterThanOrEqual(75);
+    expect(SHOE_BRANDS.length).toBeGreaterThanOrEqual(45);
+    expect(BIOMETRIC_PHOTO_SPECS.length).toBeGreaterThanOrEqual(90);
   });
 
   it("maps UK ring letters and photo slug aliases accurately", () => {

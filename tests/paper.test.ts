@@ -31,7 +31,8 @@ describe("Printable Paper, Holidays & Avery Coordinate Engine", () => {
   });
 
   it("builds accurate 2026-2027 calendar grids with country holidays", () => {
-    expect(Object.keys(HOLIDAY_COUNTRIES).length).toBe(10);
+    expect(Object.keys(HOLIDAY_COUNTRIES).length).toBeGreaterThanOrEqual(20);
+    expect(AVERY_TEMPLATES.length).toBeGreaterThanOrEqual(30);
     const julyBe = buildMonthCalendarGrid(2026, 7, true, PUBLIC_HOLIDAYS_2026_2027.BE);
     const jul21 = julyBe.weeks.flat().find((c) => c.isoDate === "2026-07-21");
     expect(jul21?.holidayNames.length).toBe(1);
